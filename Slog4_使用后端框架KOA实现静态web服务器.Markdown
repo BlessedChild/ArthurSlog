@@ -5,7 +5,7 @@
 * Guangzhou·China
 * July 11th 2018
 
-![关注微信公众号“ArthurSlog”](https://user-gold-cdn.xitu.io/2018/7/11/164859cff759c3ef?w=128&h=130&f=jpeg&s=15801 "微信扫描二维码，关注我的公众号")
+![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
  梦想是锁不住的
 
@@ -126,7 +126,7 @@ console.log('listening on port 3000');
 
 ### 欢迎关注我的微信公众号 ArthurSlog
 
-![ArthurSlog](https://user-gold-cdn.xitu.io/2018/7/11/164859cff759c3ef?w=128&h=130&f=jpeg&s=15801 "微信扫描二维码，关注我的公众号")
+![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
 ### 如果你喜欢我的文章 欢迎点赞 留言
 ### 谢谢
