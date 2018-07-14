@@ -92,7 +92,7 @@ index.html
 ##### 分析一下上面的两份文件代码：
 
 1. 在 index.js 里，引入 koa 框架和 koa-static 中间件实现了一个 静态web服务器，静态路由至当前路径下的 index.html
-2. 在 index.html 里，引入 vue框架：
+2. 在 index.html 里，引入 [vue框架](https://cn.vuejs.org/v2/guide/installation.html#%E7%9B%B4%E6%8E%A5%E7%94%A8-lt-script-gt-%E5%BC%95%E5%85%A5)：
 
 index.html
 ``` html
@@ -122,7 +122,7 @@ index.html
 <div id="app">{{ message }}</div>
 ```
 
-index.js
+index.html
 ``` js
 new Vue({
     el: '#app',
