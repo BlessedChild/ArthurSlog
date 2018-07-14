@@ -112,14 +112,14 @@ index.html
 
 index.js
 ``` js
-        <script>
-        new Vue({
-            el: '#app',
-            data: {
-                rawHtml: '<span style="color:red">ArthurSlog</span>'
-            }
-        })
-        </script>
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        rawHtml: '<span style="color:red">ArthurSlog</span>'
+    }
+})
+</script>
 ```
 
 ##### index.html 里使用了 v-html 指令，把 index.js 里的 rawHtml 作为 html 格式
