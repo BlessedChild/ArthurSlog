@@ -96,11 +96,13 @@ console.log('listening on port 3000');
 
 * 打开浏览器，地址栏输入 127.0.0.1:3000， 回车，正常执行会有以下结果：
 
-``` 
+``` txt
 Hello <span style="color:red">ArthurSlog</span>
 
 Hello ArthurSlog
 ```
+
+##### 上面的第二行，显示的 ArthurSlog 会显示红色
 
 ##### 请注意到 
 
