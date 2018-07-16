@@ -78,7 +78,7 @@ In other words: The "HTML DOM" is a standard for how to get, change, add, or del
 
 * [Koa-static](https://github.com/koajs/static)
 
-* 
+
 
 ### 开始编码：
 
