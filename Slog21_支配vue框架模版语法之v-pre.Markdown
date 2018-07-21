@@ -7,7 +7,7 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
-一个瘦小的男孩 从小失去父母 但一只小鸟每天在他窗前说 你是世上最高大威猛的男人 男孩长大后 真的成了小鸟所说的高大威猛的人 当上将军拯救了国家
+既然选择了浩瀚大海 那就注定要迎接风浪 既然选择了灿烂星辰 那就注定要拥抱深空
 
 ---
 
