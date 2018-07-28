@@ -86,7 +86,7 @@ Query OK, 0 rows affected (0.09 sec)
 
 ```
 mysql> INSERT INTO Account (AccountName, Password)
-VALUES ('ArthurSlog','ArthurSlog);
+VALUES ('ArthurSlog','ArthurSlog');
 ```
 
 Query OK, 1 row affected (0.08 sec)
@@ -179,7 +179,7 @@ router.get('/signin', async (ctx) => {
         host: 'localhost',
         user: 'root',
         password: '88888888',
-        database: 'Game_db'
+        database: 'mysql_db'
     });
 
     
