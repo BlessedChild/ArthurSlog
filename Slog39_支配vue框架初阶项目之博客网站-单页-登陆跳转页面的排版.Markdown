@@ -333,7 +333,7 @@ var signup_container = new Vue({
       xhr.open('GET', host + 'signin?' + 'name=' + self.name_signin + '&password=' + self.password_signin, true)
 
       xhr.onload = function () {
-        //self.commits = xhr.responseText
+        //解析服务端返回的数据
         var myObj = JSON.parse(xhr.responseText);
         self.commits = myObj
       }
