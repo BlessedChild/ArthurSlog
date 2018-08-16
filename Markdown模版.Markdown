@@ -11,6 +11,16 @@
 
 ---
 
+* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+
+* [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
+
+* [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
+
+* [segmentfault](https://segmentfault.com/u/arthurslog/articles)
+
+* 
+
 ### 开发环境MacOS(High Sierra 10.13.5)
 
 #### 需要的信息和信息源：
