@@ -15,8 +15,6 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
----
-
 
 
 ---
