@@ -7,10 +7,6 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
-
-
----
-
 * [GitHub](https://github.com/BlessedChild/ArthurSlog)
 
 * [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
@@ -19,7 +15,11 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
-* 
+---
+
+
+
+---
 
 ### 开发环境MacOS(High Sierra 10.13.5)
 
