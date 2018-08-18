@@ -1,9 +1,9 @@
 * ArthurSlog
-* SLog-41
+* SLog-42
 * Year·1
 
 * Guangzhou·China
-* Aug 18th 2018
+* Aug 19th 2018
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
@@ -17,13 +17,31 @@
 
 
 
-履霜坚冰至
+从业之路不同 机缘也不同 人生轨迹由机缘组成 想要有什么样的机缘 也就明白了自己要走的路
 
 ---
 
 ### 开发环境MacOS(High Sierra 10.13.5)
 
 #### 需要的信息和信息源：
+
+* [css 元素框的类型](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
+
+* [HTML Demo: <img>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+
+* [CSS Demo: border](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+
+* [CSS Demo: border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)
+
+* [CSS Demo: padding](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
+
+* [CSS Demo: margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+
+* [CSS Demo: width](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
+
+* [CSS Demo: height](https://developer.mozilla.org/en-US/docs/Web/CSS/height)
+
+* [CSS Demo: object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
 
 * [样式文件预编译器Sass的安装和使用](https://sass-lang.com/install)
 
@@ -51,107 +69,9 @@
 
 ### 开始编码
 
-* 本篇使用 Sass样式预编译器，编写 sass 文件生成 css文件，布置登陆成功后页面的样式
+* 本篇实现 登陆后，显示默认头像
 
-* 参考[Sass官网使用文档](https://sass-lang.com/install)，安装完 Sass编译程序之后，转换过程使用一下命令
-
-> sass xxx.scss xxx.css
-
-* 根据 [Sass官网的使用手册](https://sass-lang.com/guide)
-
-client/css/style.scss
-``` scss
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #ff0000;
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}
-
-#signup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#signinResult {
-  display: flex;
-  flex-direction: column;
-}
-
-#signinResult > div {
-  background-color: #f1f1f1;
-  width: 300px;
-  margin: 5px;
-  text-align: left;
-  line-height: 50px;
-}
-```
-
-* 上面的代码参考 w3schools 的 [css文档手册](https://www.w3schools.com/css/css3_flexbox.asp)，我们使用 Flexbox 属性来定位和布局
-
-* 其中新增的代码如下
-
-``` scss
-#signinResult {
-  display: flex;
-  flex-direction: column;
-}
-
-#signinResult > div {
-  background-color: #f1f1f1;
-  width: 300px;
-  margin: 5px;
-  text-align: left;
-  line-height: 50px;
-}
-```
-
-* 现在，切换到 css 文件夹路径下
-
-> cd client/css/
-
-* 现在，我们要使用 Sass预编译器（其实就是一段代码，一个程序），来把 sass 文件转换为 css 文件
-
-* 根据 [Sass官网的使用说明](https://sass-lang.com/install),"sass sass文件名 css文件名"
-
-> sass style.scss style.css
-
-* 现在，scss 文件就转换为 css 文件了，转换的结果如下：
-
-client/css/style.css
-``` css
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #ff0000;
-}
-
-#signup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#signinResult {
-  display: flex;
-  flex-direction: column;
-}
-
-#signinResult > div {
-  background-color: #f1f1f1;
-  width: 300px;
-  margin: 5px;
-  text-align: left;
-  line-height: 50px;
-}
-
-/*# sourceMappingURL=style.css.map */
-```
-
-* 同时，需要调整一下 html 文件，把需要调整样式的部分，用 id 属性进行关联
+* 参考[HTML Demo: <img>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)，我们对 html 文件进行更新
 
 client/app.html
 ``` html
@@ -365,6 +285,9 @@ client/app.html
         </template>
 
         <template id="returnResult" v-else-if="pagestate === '3'">
+            <div>
+                <img id="ArthurSlog_icon" src="/image/ArthurSlog.png" alt="ArthurSlog_icon" />
+            </div>
             <div id="signinResult">
                 <div v-for="(value, key) in commits">
                     {{ key }}: {{ value }}
@@ -372,19 +295,152 @@ client/app.html
             </div>
         </template>
     </div>
-
-
     <script src="./js/signup.js"></script>
 </body>
 
 </html>
 ```
 
+* 其中更新的部分如下：
+
+client/app.html
+``` html
+<div>
+    <img id="ArthurSlog_icon" src="/image/ArthurSlog.png" alt="ArthurSlog_icon" />
+</div>
+```
+
+* 首先给 img 上个 id 标记，标记为 "ArthurSlog_icon"，用于接下来样式的调整
+
+* 接下来，切换到 client 文件夹路径下
+
+> cd client
+
+* 建立一个新的文件夹 image，来存放图片文件
+
+> mkdir image
+
+* 下载图片 [ArthurSlog.png](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog.png?raw=true) 到 image 文件夹下
+
 * 现在，打开浏览器，输入 127.0.0.1:3000/app.html，点击 signin 按钮
 
-* 输入账号：ArthurSlog 密码：ArthurSlog，点击登陆，正常执行下，数据都居中并带有背景色块
+* 输入账号：ArthurSlog 密码：ArthurSlog，点击登陆，正常执行下，默认图片会显示出来
 
-* 至此，我们对 登陆成功的页面 进行了布局和定位。
+* 接下来，我们需要来调整图片的 布局和定位
+
+* 打开 scss 文件
+
+clinet/css/style.scss
+``` scss
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #ff0000;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+#signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#signinResult {
+  display: flex;
+  flex-direction: column;
+}
+
+#signinResult > div {
+  background-color: #f1f1f1;
+  width: 300px;
+  margin: 5px;
+  text-align: left;
+  line-height: 50px;
+}
+
+#ArthurSlog_icon {
+  object-position: 50% 50%;
+  width: 300px;
+  object-fit: contain;
+  border: 1px solid rgb(171, 255, 216);
+  border-radius: 30px;
+  background-color: silver;
+}
+```
+
+* 上面的代码参考 w3schools 的 [css文档手册](https://www.w3schools.com/css/css3_flexbox.asp)，我们使用 Flexbox 属性来定位和布局，另外参考[CSS Demo: object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)，我们使用 object-position 属性来让图片居中
+
+* 其中新增的代码如下
+
+``` scss
+#ArthurSlog_icon {
+  object-position: 50% 50%;
+  width: 300px;
+  object-fit: contain;
+  border: 1px solid rgb(171, 255, 216);
+  border-radius: 30px;
+  background-color: silver;
+}
+```
+
+* 现在，切换到 css 文件夹路径下
+
+> cd client/css/
+
+* 现在，我们要使用 Sass预编译器（其实就是一段代码，一个程序），来把 sass 文件转换为 css 文件
+
+* 根据 [Sass官网的使用说明](https://sass-lang.com/install),"sass sass文件名 css文件名"
+
+> sass style.scss style.css
+
+* 现在，scss 文件就转换为 css 文件了，转换的结果如下：
+
+client/css/style.css
+``` css
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #ff0000;
+}
+
+#signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#signinResult {
+  display: flex;
+  flex-direction: column;
+}
+
+#signinResult > div {
+  background-color: #f1f1f1;
+  width: 300px;
+  margin: 5px;
+  text-align: left;
+  line-height: 50px;
+}
+
+#ArthurSlog_icon {
+  object-position: 50% 50%;
+  width: 300px;
+  object-fit: contain;
+  border: 1px solid #abffd8;
+  border-radius: 30px;
+  background-color: silver;
+}
+
+/*# sourceMappingURL=style.css.map */
+```
+
+* 现在，打开浏览器，输入 127.0.0.1:3000/app.html，点击 signin 按钮
+
+* 输入账号：ArthurSlog 密码：ArthurSlog，点击登陆，正常执行下，默认图片会显示出来，并居中显示
+
+* 至此，我们对 默认头像 进行了布局和定位。
 
 ---
 
