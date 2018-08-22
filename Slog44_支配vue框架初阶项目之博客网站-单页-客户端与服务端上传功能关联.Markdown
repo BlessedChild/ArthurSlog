@@ -1,9 +1,9 @@
 * ArthurSlog
-* SLog-43
+* SLog-44
 * Year·1
 
 * Guangzhou·China
-* Aug 21th 2018
+* Aug 22th 2018
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
@@ -15,9 +15,7 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
-
-
-人生就是这样 苦乐相伴 福祸相依
+人们会渐渐爱上压迫 崇拜那些使他们丧失思考能力的工业产物
 
 ---
 
@@ -49,111 +47,15 @@
 
 * 本篇实现 图片的上传 和 头像的修改
 
-* 我们先梳理一下，首先要在客户端部分（浏览器端）实现文件的选择和文件的上传；在服务端实现文件的接收，重要的是接受之后，把接收到的图片替换掉 client/image 文件夹里的图片文件，这样的话，当下次打开浏览器登陆，重新向服务端拉取数据的时候，就会拉取到更新后的图像了
-
-* 所以，我们确定了需要修改的文件分别是 服务端:server\index.js、客户端:client\signup.js、客户端:client\app.html
-
-* 我们先来更新 html 文件，在页面上增加一个上传图片的功能入口，这里我们分成两个操作：
+* 上一篇，我们完成了下面的第一步，现在我们来完成第二步
 
 1. 点击选择按钮，弹出本地文件浏览框之后，选择我们要的图片，然后点击确认，锁定我们要的图片
 
 2. 点击上传图片，将我们锁定好的图片上传至服务器，显示上传的结果，客户端要做的事情了就到这里为止了
 
-* 参考 [vue.js官方手册](https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
+* 参考 vue.js 框架的模版语法 [v-on](https://cn.vuejs.org/v2/api/#v-on)
 
-``` html
-<div id="example-2">
-  <!-- `greet` 是在下面定义的方法名 -->
-  <button v-on:click="greet">Greet</button>
-</div>
-```
-
-``` js
-var example2 = new Vue({
-  el: '#example-2',
-  data: {
-    name: 'Vue.js'
-  },
-  // 在 `methods` 对象中定义方法
-  methods: {
-    greet: function (event) {
-      // `this` 在方法里指向当前 Vue 实例
-      alert('Hello ' + this.name + '!')
-      // `event` 是原生 DOM 事件
-      if (event) {
-        alert(event.target.tagName)
-      }
-    }
-  }
-})
-
-// 也可以用 JavaScript 直接调用方法
-example2.greet() // => 'Hello Vue.js!'
-```
-
-* 上面的代码，说明了在使用 vue.js 框架的时候，当你想要关联到 原生DOM事件 的时候，需要做两件事情，第一就是使用 vue.js模版语法 v-on: + 事件（比如 click、change 等等，即：v-on:click、v-on:change）= "方法名（在 js 文件里实现这个方法）"，来创建一个逻辑使 html文件 和 js文件 互相关联；第二件事就是运用（运用的意思就是需要知道这个东西的原理，然后结合场景去使用）  原生DOM事件，通过这个 原生DOM事件，html文件上发生的事件所包含的信息可以传递给 js文件，js文件得到这些信息后 就可以进行加工修改，然后再次渲染到 html文件上
-
-* 首先先观察到关键词 event，google一下“event html”：
-
-``` txt
-HTML事件是HTML元素发生的“事物”。
-
-在HTML页面中使用JavaScript时，JavaScript可以对这些事件 做出“反应”。
-```
-
-* 举个栗子，比如我们编写出一个按钮，然后点击之后会显示“ArthurSlog”
-
-``` html
-<!DOCTYPE html>
-<html>
-<body>
-
-<button onclick="display()">My name is: </button>
-
-<script>
-function display() {
-    document.getElementById("demo").innerHTML = "ArthurSlog";
-}
-</script>
-
-<p id="demo"></p>
-
-</body>
-</html> 
-```
-
-* 上面的代码，其中事件（event）指的就是“点击按钮”这个动作，也就是“onclick”事件，当发生“onclick”事件的时候，会调用到display（）函数，从而执行display（）函数里面的逻辑，打印出 “ArthurSlog”，上面是没有使用 vue.js 框架时的语法，事件和函数的关联方式就是 onclick=“display()”，而使用 vue.js 框架时，我们需要配合 vue.js 框架使用 vue 的模版语法 “v-on”，所以上面的代码就会变成：
-
-``` html
-<!DOCTYPE html>
-<html>
-<body>
-
-<button v-on:onclick="display">My name is: </button>
-
-<script>
-    var signup_container = new Vue({
-        el: '#demo',
-        data: {
-            txt: ''
-        },
-        methods:{
-            display: function {
-                this.txt = "ArthurSlog"
-            }
-        }
-    })
-</script>
-
-<p id="demo">{{ txt }}</p>
-
-</body>
-</html> 
-```
-
-* 原来的 onclick=“display()” 变成了 v-on:onclick="display"
-
-* 所以，我们的 html 文件更新为：
+* 我们编写出一个按钮，当点击按钮的时候，把我们选择好的图片上传到服务端去：
 
 client/app.html
 ``` html
@@ -374,6 +276,8 @@ client/app.html
                 <div>Uploading {{ image }} files...</div>
                 <br>
                 <input type="file" v-on:change="filesChange">
+                <br>
+                <button v-on:click="uploadfiles">uploadfiles</button>
             </div>
             <div id="signinResult">
                 <div v-for="(value, key) in commits">
@@ -388,80 +292,14 @@ client/app.html
 </html>
 ```
 
-* 其中更新的部分如下：
-
-client/app.html
-``` html
-<div>
-    <div>Uploading {{ image }} files...</div>
-    <br>
-    <input type="file" v-on:change="filesChange">
-</div>
-```
-
-* 同时，我们需要更新客户端的 js文件
-
-* 再次参考 [vue.js官方手册](https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
+* 更新的部分如下：
 
 ``` html
-<div id="example-2">
-  <!-- `greet` 是在下面定义的方法名 -->
-  <button v-on:click="greet">Greet</button>
-</div>
+<br>
+<button v-on:click="uploadfiles">uploadfiles</button>
 ```
 
-``` js
-var example2 = new Vue({
-  el: '#example-2',
-  data: {
-    name: 'Vue.js'
-  },
-  // 在 `methods` 对象中定义方法
-  methods: {
-    greet: function (event) {
-      // `this` 在方法里指向当前 Vue 实例
-      alert('Hello ' + this.name + '!')
-      // `event` 是原生 DOM 事件
-      if (event) {
-        alert(event.target.tagName)
-      }
-    }
-  }
-})
-
-// 也可以用 JavaScript 直接调用方法
-example2.greet() // => 'Hello Vue.js!'
-```
-
-* 仔细观察，可以发现在 js文件 里，“alert(event.target.tagName)” 通过，这个语句，js文件获取到了 html文件里的一些信息，那么这些又是些什么信息呢？google一下“event.target.tagName”，找到 [Event Object](https://www.w3schools.com/jsref/obj_event.asp) 的官方说明，可以理解为 event 的属性（Properties），其中发现我们在找的 [target属性](https://www.w3schools.com/jsref/event_target.asp)，官方解释如下：
-
-```
-The target event property returns the element that triggered the event.
-```
-
-* 上面的意思就是 event.target 里面包含的东西是一些 “element”，不同的 event 拥有不同的 element
-
-* 可以想到的是，每次发生事件（event）时，有一些 element 就会发生改变，可以这么认为，这些与 event 相关联的 element 就包含在 event.target 中
-
-* 下面我们来实现文件的选择功能，这里会用到 input 标签 和 onchange 事件，也就是说，当选中了我们要的图片之后，就会触发 onchange 事件，然后在 js文件里，我们要通过 event.target 来获取选择到的文件信息
-
-* 这里，input 元素（element）和 event 息息相关，也就是说，event.target 里面包含的就是 input 的属性了，我们google一下 “input type=file”，找到 [<input type="file">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)，可以找到：
-
-- | -
-- | -
-Supported Common Attributes | accept, multiple, required
-IDL attributes	| files and value
-
-``` txt
-Additional attributes
-In addition to the common attributes shared by all <input> elements, inputs of type file also support:
-
-files
-A FileList object that lists every selected file. This list has no more than one member unless the multiple attribute is specified.
-```
-* 上面的话的意思是什么？首先我们知道 input 元素可以获取的类型有 值类型 和 文件类型，这两种类型拥有一些通用的属性，但是，当 input 获取的元素为 文件类型的时候，会拥有 文件类型特有的属性--[文件集合属性](https://developer.mozilla.org/en-US/docs/Web/API/FileList)（也就是我们要找的东西），其中，每个文件拥有的属性就是[文件属性](https://developer.mozilla.org/en-US/docs/Web/API/File)
-
-* 结合上面对 vue.js 模版语法的分析 和 input元素、原生DOM事件（event）的了解，我们对客户端的 js文件 进行更新
+* 我们让 click事件 关联 uploadfiles函数，也就是说，当点击按钮的时候，会触发 js文件里的 uploadfiles函数
 
 client/js/signup.js
 ``` js
@@ -497,8 +335,22 @@ var signup_container = new Vue({
     image: ''
   },
   methods: {
-    filesChange: function(event) {
-      this.image = event.target.files[0].name
+    uploadfiles: function () {
+      var xhr = new XMLHttpRequest()
+      var fd = new FormData();
+
+      var self = this
+      xhr.open('POST', host + 'uploadfiles', true)
+
+      xhr.onload = function () {
+        //self.commits = xhr.responseText
+        self.commits = xhr.responseText
+      }
+      fd.append('myFile', this.image);
+      xhr.send(fd)
+    },
+    filesChange: function (event) {
+      this.image = event.target.files[0]
     },
     return_index: function () {
       this.pagestate = '0'
@@ -532,6 +384,16 @@ var signup_container = new Vue({
 
       var xhr = new XMLHttpRequest()
 
+      /*
+      xhr.open('GET', host + 'name=' + this.name + '&password=' + this.password + '&firstname=' + 
+      this.firstname + '&lastname=' + this.lastname + '&birthday=' + this.birthday
+      + '&sex=' + this.currentSex + '&age=' + this.currentAge + '&wechart=' + this.wechart
+      + '&qq=' + this.qq + '&email=' + this.email + '&contury=' + this.contury
+      + '&address=' + this.address + '&phone=' + this.phone + '&websize=' + this.websize
+      + '&github=' + this.github + '&bio=' + this.bio, true)
+      xhr.send()
+      */
+
       var self = this
       xhr.open('GET', host + 'signup?' + 'name=' + self.name + '&password=' + self.password + '&firstname=' +
         self.firstname + '&lastname=' + self.lastname + '&birthday=' + self.birthday
@@ -552,11 +414,164 @@ var signup_container = new Vue({
 
 * 更新的部分如下：
 
-client/js/signup.js
 ``` js
-filesChange: function(event) {
-    this.image = event.target.files[0].name
+uploadfiles: function () {
+    var xhr = new XMLHttpRequest()
+    var fd = new FormData();
+
+    var self = this
+    xhr.open('POST', host + 'uploadfiles', true)
+
+    xhr.onload = function () {
+    //self.commits = xhr.responseText
+    self.commits = xhr.responseText
+    }
+    fd.append('myFile', this.image);
+    xhr.send(fd)
 }
+```
+
+* ok，现在把客户端的部分解决了，接下来就是 服务端部分 去接收和处理了，我们更新一下 服务端 的代码，让服务端和我们上面写的函数关联起来： 
+
+server/index.js
+``` js
+const serve = require('koa-static');
+const Koa = require('koa');
+const app = new Koa();
+const Router = require('koa-router');
+const router = new Router();
+const fs = require("fs");
+const koaBody = require('koa-body');
+
+// $ GET /package.json
+app.use(serve('../client'));
+
+//
+router.get('/signin', async (ctx) => {
+
+    var mysql = require('mysql');
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '88888888',
+        database: 'my_db'
+    });
+
+
+    connection.connect(function (err) {
+        if (err) {
+            console.error('error connecting: ' + err.stack);
+            return;
+        }
+        console.log('connected as id ' + connection.threadId);
+    });
+
+
+    var response = {
+        "name": ctx.query.name,
+        "password": ctx.query.password
+    };
+
+    var addSql = 'SELECT * FROM ArthurSlogAccount WHERE AccountName=?';
+    var addSqlParams = [response.name];
+
+    var datas = await new Promise((resolve, reject) => {
+
+        connection.query(addSql, addSqlParams, function (err, result) {
+            if (err) {
+                reject(err);
+                console.log('[SELECT ERROR] - ', err.message);
+                return;
+            }
+            if (result[0].Password == response.password) {
+                resolve(result[0]);
+                console.log('Welcome~ SingIn Successul ^_^' + '\\' + 'Level: ' + result[0].Level + ' Houses: ' + result[0].Houses);
+            }
+            if (result[0].Password != response.password) {
+                reject('SingIn Fault ^_^!');
+                console.log('SingIn Fault ^_^!');
+            }
+        });
+    });
+
+    if (datas) {
+        ctx.body = datas;
+    }
+
+    connection.end();
+});
+
+//
+router.get('/signup', async (ctx) => {
+
+    var mysql = require('mysql');
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '88888888',
+        database: 'my_db'
+    });
+
+
+    connection.connect(function (err) {
+        if (err) {
+            console.error('error connecting: ' + err.stack);
+            return;
+        }
+        console.log('connected as id ' + connection.threadId);
+    });
+
+    var response = {
+        "name": ctx.query.name,
+        "password": ctx.query.password,
+        "firstname": ctx.query.firstname,
+        "lastname": ctx.query.lastname,
+        "birthday": ctx.query.birthday,
+        "sex": ctx.query.sex,
+        "age": ctx.query.age,
+        "wechart": ctx.query.wechart,
+        "qq": ctx.query.qq,
+        "email": ctx.query.email,
+        "contury": ctx.query.contury,
+        "address": ctx.query.address,
+        "phone": ctx.query.phone,
+        "websize": ctx.query.websize,
+        "github": ctx.query.github,
+        "bio": ctx.query.bio
+    };
+
+    var addSql = 'INSERT INTO ArthurSlogAccount(AccountName, Password, Firstname, Lastname, Birthday, Sex, Age, Wechart, Qq, Email, Contury, Address, Phone, Websize, Github, Bio) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    var addSqlParams = [response.name, response.password, response.firstname, response.lastname, response.birthday, response.sex, response.age, response.wechart, response.qq, response.email, response.contury, response.address, response.phone, response.websize, response.github, response.bio];
+
+
+
+    ctx.body = await new Promise((resolve, reject) => {
+
+        connection.query(addSql, addSqlParams, function (err, result) {
+            if (err) {
+                reject(err);
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            resolve('Singup Successful!');
+        });
+    });
+
+    connection.end();
+});
+
+router.post('/uploadfiles', koaBody({multipart: true}), async (ctx) => {
+
+    console.log('客户端与服务端的 uploadfiles函数 已关联');
+
+});
+
+app.use(router.routes());
+
+app.listen(3000);
+
+console.log('listening on port 3000');
+
 ```
 
 * 现在，打开浏览器，输入 127.0.0.1:3000/app.html，点击 signin 按钮
@@ -565,9 +580,9 @@ filesChange: function(event) {
 
 * 成功登陆之后，点击 “选择文件” 按钮，选择一张你电脑里的图片，然后点击“打开”
 
-* 此时，如果正常执行，你会看到 “Uploading 你选择的图片的名称 files...”
+* 再点击 uploadfiles 按钮，观察 服务端终端，如果终端正常打印出字符串 “客户端与服务端的 uploadfiles函数 已关联”，说明客户端与服务端的 uploadfiles功能 已关联了起来
 
-* 至此，我们完成了第一步 “1. 点击选择按钮，弹出本地文件浏览框之后，选择我们要的图片，然后点击确认，锁定我们要的图片”。
+* 至此，我们完成了 客户端与服务端之间 uploadfiles功能 的关联。
 
 ---
 
