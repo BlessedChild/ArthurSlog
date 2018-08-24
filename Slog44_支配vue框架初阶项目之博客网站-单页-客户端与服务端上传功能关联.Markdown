@@ -560,7 +560,7 @@ router.get('/signup', async (ctx) => {
     connection.end();
 });
 
-router.post('/uploadfiles', koaBody({multipart: true}), async (ctx) => {
+router.post('/uploadfiles', async (ctx) => {
 
     console.log('客户端与服务端的 uploadfiles函数 已关联');
 
