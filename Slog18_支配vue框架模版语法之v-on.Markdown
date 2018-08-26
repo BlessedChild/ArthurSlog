@@ -7,6 +7,14 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
+* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+
+* [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
+
+* [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
+
+* [segmentfault](https://segmentfault.com/u/arthurslog/articles)
+
 为什么要在一线城市，因为一切的舒适终将会被打破，因为新一代的人最不怕的就是学习和接受新的事物，旧的事物将会成为历史，也必将被新的所取代
 
 ---

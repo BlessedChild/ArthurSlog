@@ -7,6 +7,14 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
+* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+
+* [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
+
+* [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
+
+* [segmentfault](https://segmentfault.com/u/arthurslog/articles)
+
 你选择自己喜欢的 可能会在经济上一开始更艰难 你可以选择平坦的路 一开始走着很舒心 你也可以在在途中 选择一条崎岖的路 感受下生命的另一种色彩 这条崎岖的路可能让你看不到尽头 而且越走越泥泞 但我敢保证一点的是 当你真的坚持走下去看到路开始平坦的时候 你会无比的幸福 并且有成就感
 
 ---
