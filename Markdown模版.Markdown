@@ -1,3 +1,7 @@
+# Slogxx_xxxxxx
+
+---
+
 * ArthurSlog
 * SLog-XX
 * Year·1
