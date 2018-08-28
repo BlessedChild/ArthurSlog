@@ -69,6 +69,7 @@
 * 根据 [vue模版语法 v-bind](https://cn.vuejs.org/v2/api/#v-bind)，使用 v-bin 绑定 图片的src，让我们可以在 client/signup.js 里可以动态修改 图片的src 的值，正因为 vue.js框架双向数据流的特性，当在 client/signup.js 修改 图片的src 的值的时候，页面上也会同时渲染新的图片
 
 * 更新后的完整代码
+
 client/signup.js
 ``` js
 var host = 'http://127.0.0.1:3000/';
