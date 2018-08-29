@@ -25,6 +25,8 @@
 
 #### 需要的信息和信息源：
 
+* [github 完整代码](https://github.com/BlessedChild/lua_learningload)
+
 * [require](http://www.lua.org/pil/8.1.html)
 
 * [package](http://www.lua.org/pil/15.html)
