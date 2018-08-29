@@ -1,7 +1,5 @@
 # Slog52_python类的使用
 
----
-
 * ArthurSlog
 * SLog-52
 * Year·1
