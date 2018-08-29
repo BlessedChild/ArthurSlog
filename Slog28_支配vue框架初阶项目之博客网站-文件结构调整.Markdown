@@ -7,6 +7,14 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
+* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+
+* [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
+
+* [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
+
+* [segmentfault](https://segmentfault.com/u/arthurslog/articles)
+
 当你头脑发热的时候 手足无措的时候 记得 先面对遇到的事情和问题 先看清自己 认清问题 然后把解决方法一个一个记下来 最后选择一个合适的方法去解决
 
 ---

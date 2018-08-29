@@ -7,6 +7,14 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
+* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+
+* [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
+
+* [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
+
+* [segmentfault](https://segmentfault.com/u/arthurslog/articles)
+
 大学毕业 交了几万块钱的学费 完成了所有学业要求 然后社会就会为你买单吗？ 有的人花了几十万也只是获得月薪几千块的一个职位 而你 花了几万块钱和几个月的时间 就想让社会每月掏个万把块钱来买单啊？ 就这样的智商 先不论培训得会不会 这样的智力水平迟早也得返乡 
 
 ---
