@@ -7,6 +7,14 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
+* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+
+* [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
+
+* [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
+
+* [segmentfault](https://segmentfault.com/u/arthurslog/articles)
+
 用七八十年提交一份人生的答卷 这是一场开卷 没有监考老师 有的 是在乎你的人 我想 答案并不是最重要的 重要的是一起答卷的这群人 特别是真正在乎你的人 当答卷提交的那一刻 也许不再是忐忑不安 而是坦然以对 那些经历的种种会一直温暖着人心
 
 ---
