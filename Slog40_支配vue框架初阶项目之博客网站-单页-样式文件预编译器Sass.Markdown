@@ -15,8 +15,6 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
----
-
 劳心者治人 劳力者治于人
 
 ---

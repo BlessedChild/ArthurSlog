@@ -17,6 +17,8 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
+* [NPM Package Page](https://www.npmjs.com/~arthurslog)
+
 
 
 ---
