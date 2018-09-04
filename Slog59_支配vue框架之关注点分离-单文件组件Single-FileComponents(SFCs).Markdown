@@ -11,13 +11,15 @@
 
 * [GitHub](https://github.com/BlessedChild/ArthurSlog)
 
+* [NPM Package Page](https://www.npmjs.com/~arthurslog)
+
+* [ArthurSlog Page](http://www.arthurslog.com)
+
 * [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
 
 * [简书主页](https://www.jianshu.com/u/b9ebe10f0534)
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
-
-* [NPM Package Page](https://www.npmjs.com/~arthurslog)
 
 
 
@@ -106,6 +108,8 @@ Hello.vue
 3. 对于style， 如果是scss语法，可以使用 sass 进行编译, [官方地址](https://sass-lang.com/install)
 
 * 为了方便进行上述操作，我们可以使用构建或者说是打包工具来帮忙完成，比如，可以使用 webpackage 
+
+* 
 
 * 至此，XXX。
 
