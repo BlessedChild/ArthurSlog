@@ -1,7 +1,7 @@
-# Slog60_项目上线之域名备案时两家或多家运营商之间的业务交叉经历
+# Slog59_项目上线之域名备案时两家或多家运营商之间的业务交叉经历
 
 * ArthurSlog
-* SLog-60
+* SLog-59
 * Year·1
 
 * Guangzhou·China

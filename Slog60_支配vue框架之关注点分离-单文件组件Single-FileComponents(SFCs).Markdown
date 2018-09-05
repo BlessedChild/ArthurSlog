@@ -1,7 +1,7 @@
 # Slogxx_xxxxxx
 
 * ArthurSlog
-* SLog-59
+* SLog-60
 * Year·1
 
 * Guangzhou·China
@@ -105,6 +105,16 @@ Hello.vue
 2. 对于script， 即js文件，可以使用 Babel 进行编译, [官方地址](https://babeljs.io/docs/en/babel-cli)
 
 3. 对于style， 如果是scss语法，可以使用 sass 进行编译, [官方地址](https://sass-lang.com/install)
+
+* 现在vue单文件组件包含了这三个模块，所以需要先有一个环节来把三个模块分离成单独的模块，以供他们相对应的编译器 进行编译
+
+* 这个环节需要的一段程序就是 vue-loader，这个流程如下图所示
+
+``` txt
+                             -> template -> HelloWorld.jsx  -> 
+HelloWorld.vue => vue-loader -> script   -> HelloWorld.js   -> webpackage => HelloWorld.html
+                             -> style    -> HelloWorld.scss ->
+```
 
 * 为了方便进行上述操作，我们可以使用构建或者说是打包工具来帮忙完成，比如，可以使用 webpackage 
 
