@@ -5,7 +5,7 @@
 * Year·1
 
 * Guangzhou·China
-* Aug XXth 2018
+* Sep XXth 2018
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
