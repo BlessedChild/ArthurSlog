@@ -21,7 +21,7 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
-
+信言不美 美言不信 善者不辩 辩者不善 知者不博 博者不知
 
 ---
 
