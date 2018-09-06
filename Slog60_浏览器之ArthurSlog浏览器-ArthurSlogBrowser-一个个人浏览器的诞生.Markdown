@@ -61,7 +61,7 @@ restr = fr.split('<div>', 2 ) # 解析 index.html 文件，这里把 <div> 给�
 print restr[1]
 ```
 
-* 以为上面的解析程序会读取当前路径下的一个名为 index.html 的文件
+* 因为上面的解析程序会读取当前路径下的一个名为 index.html 的文件
 
 ~/Desktop/ArthurSlogBrowser/index.html
 ``` html
