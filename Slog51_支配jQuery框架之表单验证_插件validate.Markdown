@@ -1,7 +1,5 @@
 # Slog51_支配jQuery框架之表单验证_插件validate
 
----
-
 * ArthurSlog
 * SLog-51
 * Year·1
