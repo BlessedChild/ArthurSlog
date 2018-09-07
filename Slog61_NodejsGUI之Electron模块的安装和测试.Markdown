@@ -41,7 +41,7 @@
 
 > cd ~/Desktop/
 
-> markdir electron_learningload && cd electron_learningload
+> mkdir electron_learningload && cd electron_learningload
 
 * 使用npm初始化环境（其实就是创建并配置一个package.json文件）
 
