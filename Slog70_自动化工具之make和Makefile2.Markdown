@@ -31,7 +31,7 @@
 
 * 提示：Makefile中使用Tab键作为两个block之间的分割标志
 
-* [完整代码-Github传送门]()
+* [完整代码-Github传送门](https://github.com/BlessedChild/makefile_demo)
 
 * [make工具](https://zh.wikipedia.org/wiki/Make)
 
