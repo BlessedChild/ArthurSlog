@@ -5,7 +5,7 @@
 * Year·1
 
 * Guangzhou·China
-* Sep XXth 2018
+* September XXth 2018
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
@@ -25,25 +25,13 @@
 
 ---
 
-### 开发环境MacOS(High Sierra 10.13.5)
+### 开发环境MacOS(High Sierra 10.13.6 (17G65))
 
 #### 需要的信息和信息源：
 
 ### 开始编码
 
-* 更新后的完整代码：
 
-client/xxx.js
-```
-
-```
-
-* 更新的部分：
-
-client/xxx.js
-```
-
-```
 * 至此，XXX。
 
 ---
