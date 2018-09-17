@@ -9,11 +9,11 @@
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
-* [ArthurSlog Page](http://www.arthurslog.com)
+* [ArthurSlog.com](http://www.arthurslog.com)
 
-* [GitHub](https://github.com/BlessedChild/ArthurSlog)
+* [GitHub: BlessedChild](https://github.com/BlessedChild/ArthurSlog)
 
-* [NPM Package Page](https://www.npmjs.com/~arthurslog)
+* [NPMJS.com: arthurslog](https://www.npmjs.com/~arthurslog)
 
 * [掘金主页](https://juejin.im/user/59f2a424f265da432f305c66/posts)
 
