@@ -11,6 +11,8 @@
 
 * [ArthurSlog.com](http://www.arthurslog.com)
 
+* [MSDN: ArthurSlog](https://blog.csdn.net/u010997452/article/list/1)
+
 * [GitHub: BlessedChild](https://github.com/BlessedChild/ArthurSlog)
 
 * [NPMJS.com: arthurslog](https://www.npmjs.com/~arthurslog)
