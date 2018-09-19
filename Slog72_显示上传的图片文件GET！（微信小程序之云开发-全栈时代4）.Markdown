@@ -1,11 +1,11 @@
-# Slog71_微信小程序之云开发-全栈时代3
+# Slog72_显示上传的图片文件GET！（微信小程序之云开发-全栈时代4）
 
 * ArthurSlog
-* SLog-71
+* SLog-72
 * Year·1
 
 * Guangzhou·China
-* Sep 12th 2018
+* Sep 13th 2018
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
@@ -21,7 +21,7 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
-道常无为而无不为
+临河而羡鱼 不如归家织网
 
 ---
 
@@ -36,6 +36,8 @@
 * [云端API文档（服务端）](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-server-api/)
 
 ### 前言
+
+* 微信开发者工具版本： v 1.02.1809111
 
 * ”云开发“ 封装好了一些常用的业务逻辑，提供了以下方面的相关API供开发者使用：
 
@@ -127,84 +129,20 @@ README.md
 project.config.json
 ```
 
-* 在使用“云开发”的时候，需要先调用 初始化函数 init
+* 参考 
 
-* 小程序端的初始化函数是 wx.cloud.init()
+1. [微信小程序官方文档 -- chooseImage](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html)
 
-* 云端的初始化函数是 const cloud = require('wx-server-sdk') cloud.init())
+2. [小程序·云开发官方文档 -- wx.cloud.uploadFile](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/storage/uploadFile.html)
+
+* 本次添加图片上传功能，完整代码如下：
 
 Client：
-miniprogram/app.js
-``` js
-//app.js
-App({
-  onLaunch: function () {
-    
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        env: 'arthurslog-test-d4537a',
-        traceUser: true,
-      })
-    }
-
-    this.globalData = {}
-  }
-})
-```
-
-Server:
-cloudfunctions/arthurSlog_getInfo/index.js
-``` js
-// 云函数入口文件
-const cloud = require('wx-server-sdk')
-
-cloud.init()
-
-// 云函数入口函数
-exports.main = async(event, context) => {
-  return event.userInfo
-}
-```
-
-* 上面的Server端代码中
-
-Server:
-cloudfunctions/arthurSlog_getInfo/index.js
-``` js
-// 云函数入口文件
-//const cloud = require('wx-server-sdk')
-
-//cloud.init()
-
-// 云函数入口函数
-exports.main = async(event, context) => {
-  return event.userInfo
-}
-```
-
-* 没有调用到 “wx-server-sdk” 的方法，所以可以注释掉，不影响结果
-
-* 这里提醒一下，就是 cloudfunctions 路径下的文件的名称，就是云端向小程序端提供的方法
-
-* 举个栗子：对于cloudfunctions/arthurSlog_getInfo来说，arthurSlog_getInfo这个文件夹的名字就是云端向小程序端提供的方法
-
-* 现在在小程序端就可以参考[小程序端API文档（客户端）](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/)
-
-* 大部分函数都来源于 对象“wx”，这个 “wx”对象 就类似于服务端的 “wx-server-sdk”对象
-
-* 比如，在小程序端（客户端）有 wx.cloud.callFunction（）、wx.cloud.uploadFile（）等方法
-
-* 再比如，在云端（服务端）有 cloud.init()、cloud.database()、cloud.collection（）等方法
-
-* 现在，我们来接触一下 “小程序·云开发” 的 “存储管理功能”
-
-* 打开小程序端的 miniprogram/pages/index/index.js
-
-Client
 miniprogram/pages/index/index.js
 ``` js
+//index.js
+const app = getApp()
+
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -233,74 +171,120 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
 
+        wx.showLoading({
+          title: '上传中',
+        })
+
         this_.setData({
           imagePath: tempFilePaths[0],
         })
 
         console.log(tempFilePaths[0])
+
+        const filePath = tempFilePaths[0]
+        const cloudPath = 'ArthurSlog' + filePath.match(/\.[^.]+?$/)[0]
+        wx.cloud.uploadFile({
+          cloudPath,
+          filePath, // 小程序临时文件路径
+        }).then(res => {
+          // get resource ID
+          console.log(res.fileID) //success返回的fileID值    
+          console.log(res.statusCode) //success返回的statusCode值
+        }).catch(error => {
+          // handle error
+          console.error('[上传文件] 失败：', error)
+          wx.showToast({
+            icon: 'none',
+            title: '上传失败',
+          })
+        }).then( () => {
+            wx.hideLoading()
+        })
       }
     })
   },
 })
 ```
 
-* 在这里，我们定义了一个方法arthurSlog_uploadImg，参考 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/storage/uploadFile.html)
+* 这里分析一下
 
-* 首先将当前环境对象 映射 给对象 this_
+* 其实整个操作流程主要分两步，也就是这里使用了两个功能函数的原因
 
-Client
+* 首先，用户点击上传按钮，这会出发DOM事件，打开一个窗口供用户进行文件的选择 => 这一步“锁定”文件
+
+* 其次，当学好文件，点击“打开的时候”，客户端首先对文件进行读取，并发送至云端 => 这一步“上传”文件
+
+* 整个过程简单说的话，上面两步可以概括
+
+* 但实际上，在线上使用的时候，往往会有很多意想不到的问题，举个栗子：
+
+1. 上传的文件过大，比如一个1G的图片？
+
+2. 文件在上传之前要加载进内存中，这个过程如果出错怎么解决？
+
+3. 如何判断服务端已经完整接收了小程序端的文件...
+
+4. 以上是比较常见的，事实上还有更多的东西需要考虑....
+
+* 好在，腾讯公司已经把很多细节上的东西帮我们做好了
+
+* 我们只管用，然后提BUG给他们的开发人员 ^ ^
+
+* 在这份代码里，使用了 wx.showLoading() 和 wx.hideLoading() 这两个函数
+
+* 可能你会经常听到“生命周期”这种字眼
+
+* 显然，我们希望在上传文件的时候出现“上传中”的提示，而在确认上传完毕之后关闭“上传中”的提示
+
+* wx.showLoading() 在这里就是一个弹出框，而 wx.hideLoading()就是关闭这个弹出框
+
+* 当上传过程出错的时候，这里使用了 wx.showToast() 来显示消息提示框，提示用户上传失败
+
+* 这里还需要注意一点，就是：
+
+Client：
 miniprogram/pages/index/index.js
 ``` js
 const this_ = this
 ```
 
-* 使用 wx.chooseImage 方法，打开本地文件，选择要上传的文件
+* 需要在方法外部，先把当前的环境对象赋给一个新对象
 
-* 在success函数里，使用setdata函数，更新 imagePath 对象的值，并使得页面上对应的部分重新渲染
+* 然后，再在函数体里执行
 
-* 现在，我们来更新页面文件：
-
-Client
-miniprogram/pages/index/index.wxml
-``` html
-<!--index.wxml-->
-<view class="container">
-
-  <!-- ... -->
-
-  <!-- 获取 openid -->
-  <view class="uploader">
-    <button class="userinfo-nickname" bindtap="arthurSlog_getInfo">点击获取 openid</button>
-  </view>
-
-  <!-- 返回两个对象之和 -->
-  <view class="uploader">
-    <button class="userinfo-nickname" bindtap="arthurSlog_methodAdd">点击返回两个对象之和</button>
-  </view>
-
-  <!-- 上传图片 -->
-  <view class="uploader">
-    <button class="userinfo-nickname" bindtap="arthurSLog_uploadImg">上传图片</button>
-  </view>
-  <!-- 显示图片 -->
-  <view>
-    <image class="img" src="{{imagePath}}" mode="scaleToFill"></image>
-  </view>
-
-</view>
+Client：
+miniprogram/pages/index/index.js
+``` js
+this_.setData({
+  imagePath: tempFilePaths[0],
+})
 ```
 
-* 这次使用的方法，不需要自己编写云端服务代码，腾讯公司已经提供了
+* 现在，请保存好更新过代码的文件
 
-* 保存文件，在模拟器中点击上传图片（我放了一张演示图片在此路径下：miniprogram/images/ArthurSlog.png）
+* 接着，点击模拟器里的“上传图片”按钮
 
-* 选中要上传的文件，点击“打开”
+* 选择样例图片（图片路径在miniprogram/images/ArthurSlog.png），完整代码已经上传至Github: [https://github.com/BlessedChild/ArthurSlog_WeiXinCloudDevelopment]((BlessedChild/ArthurSlog_WeiXinCloudDevelopment))
 
-* 正常执行之下，会显示出我们刚刚上传的图片，到这里暂停一下，现在图片还没发送出去
+* 然后点击“打开”
 
-* 在下一篇中，再继续补充
+* 这时应该就会弹出一个 “上传中” 的提示框，上传完成之后，提示框才会消失
 
-* 至此，我们实现了一个选取本地文件，并显示选中的图片文件。
+* 此时，控制台会打印类似下面的信息
+
+``` txt
+http://tmp/sadsdasdasdas.dfsdfsdf.fsdfasdfas.png
+index.js? [sm]:183 cloud://fdsf-tefsdfsst-d4gfdgd537a.6fsdc7e-fsasd-test-fsd/ArthurSlog.png
+index.js? [sm]:184 200
+```
+
+* 第一行是小程序临时文件路径
+
+* 第二行是fileID的值
+
+* 第三行是statusCode（状态码）
+
+* 至此，我们实现了一个选取本地文件，并上传至小程序云端，最后在客户端显示上传的图片文件的功能。
 
 ---
 
