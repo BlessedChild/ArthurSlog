@@ -1,4 +1,5 @@
 # Slogxx_xxxxxx
+![ArthurSlog](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog_Logo.png?raw=true)
 
 * ArthurSlog
 * SLog-XX

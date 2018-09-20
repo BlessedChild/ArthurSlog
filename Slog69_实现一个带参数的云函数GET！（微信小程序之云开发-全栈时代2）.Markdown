@@ -1,4 +1,5 @@
-# 实现一个带参数的云函数GET！（微信小程序之云开发-全栈时代2）
+# Slog69_实现一个带参数的云函数GET！（微信小程序之云开发-全栈时代2）
+![ArthurSlog](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog_Logo.png?raw=true)
 
 * ArthurSlog
 * SLog-69

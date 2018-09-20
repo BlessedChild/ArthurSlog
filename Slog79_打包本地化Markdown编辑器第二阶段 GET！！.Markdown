@@ -1,4 +1,5 @@
 # Slog79_打包本地化Markdown编辑器第二阶段 GET！！
+![ArthurSlog](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog_Logo.png?raw=true)
 
 * ArthurSlog
 * SLog-79
