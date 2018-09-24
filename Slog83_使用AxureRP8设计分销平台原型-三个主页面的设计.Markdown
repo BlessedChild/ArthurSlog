@@ -1,12 +1,12 @@
-# Slog81_使用AxureRP8设计分销平台原型-图片轮播
+# Slog83_使用AxureRP8设计分销平台原型-三个主页面的设计
 ![ArthurSlog](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog_Logo.png?raw=true)
 
 * ArthurSlog
-* SLog-81
+* SLog-83
 * Year·1
 
 * Guangzhou·China
-* September 23th 2018
+* September 25th 2018
 
 ![关注微信公众号“ArthurSlog”](https://github.com/BlessedChild/LogofAxu/blob/master/images/icon_128.jpg?raw=true "微信扫描二维码，关注我的公众号")
 
@@ -24,7 +24,7 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
-物固有所然 物固有所可
+言有宗 事有君 夫唯无知 是以不我知
 
 ---
 
@@ -35,10 +35,6 @@
 * [Axure PR8](https://www.axure.com/)
 
 ### 开始编码
-
-* 一款成熟的产品，除了时间的打磨，还需要工程化的方法
-
-* 使用Axure PR8 来设计产品原型，为工作指明目标
 
 * Axure作为一款专业的原型设计工具
 
@@ -52,11 +48,21 @@
 
 * 高保真原型做出的效果几乎和实际效果一致，但是它需要投入精力，完整表达设计理念和体验
 
-* 效果展示：[http://www.arthurslog.com/axurerp8/carouselarea.html](http://www.arthurslog.com/axurerp8/carouselarea.html)
+* 上一次使用Axure RP8实现了 图片轮播的功能
 
-* 图片比较大，可能加载比较慢
+* 这次继续使用Axure PR8 来设计产品原型，为工作指明目标，先来设计出三个主要界面（由底部的三个TabBar切换）
 
-* 至此，使用Axure RP8 实现了图片轮播功能。
+* 效果展示：[http://www.arthurslog.com/store/carouselarea.html](http://www.arthurslog.com/axurerp8/carouselarea.html)
+
+* 这次增加了底部的三个TabBar（主页、订单、我的）
+
+* 同时分为三个页面，当你点击TabBar时进行页面切换
+
+* 图片比较大，可能加载比较慢，在加载和切换页面的时候 请稍微等待一下
+
+* 源码已更新至 Github： [https://github.com/BlessedChild/ArthurSlog.com](https://github.com/BlessedChild/ArthurSlog.com)
+
+* 至此，使用Axure RP8 实现了主要界面的设计。
 
 ---
 
