@@ -52,7 +52,7 @@
 
 * 这次继续使用Axure PR8 来设计产品原型，为工作指明目标，先来设计出三个主要界面（由底部的三个TabBar切换）
 
-* 效果展示：[http://www.arthurslog.com/store/carouselarea.html](http://www.arthurslog.com/axurerp8/carouselarea.html)
+* 效果展示：[http://www.arthurslog.com/store/carouselarea.html](http://www.arthurslog.com/store/carouselarea.html)
 
 * 这次增加了底部的三个TabBar（主页、订单、我的）
 
