@@ -52,7 +52,7 @@
 
 * 高保真原型做出的效果几乎和实际效果一致，但是它需要投入精力，完整表达设计理念和体验
 
-* 效果展示：[http://www.arthurslog.com/axurerp8/carouselarea.html](http://www.arthurslog.com/axurerp8/carouselarea.html)
+* 效果展示：[http://www.arthurslog.com/ArthurSlogCarouselarea/carouselarea.html](http://www.arthurslog.com/ArthurSlogCarouselarea/carouselarea.html)
 
 * 图片比较大，可能加载比较慢
 
