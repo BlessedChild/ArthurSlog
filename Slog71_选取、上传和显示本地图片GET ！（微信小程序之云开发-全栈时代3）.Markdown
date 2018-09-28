@@ -1,4 +1,5 @@
 # Slog71_选取、上传和显示本地图片GET ！（微信小程序之云开发-全栈时代3）
+![ArthurSlog](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog_Logo.png?raw=true)
 
 * ArthurSlog
 * SLog-71
