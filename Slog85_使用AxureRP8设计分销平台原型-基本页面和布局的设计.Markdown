@@ -1,8 +1,8 @@
-# Slog84_使用AxureRP8设计分销平台原型-基本页面和布局的设计
+# Slog85_使用AxureRP8设计分销平台原型-基本页面和布局的设计
 ![ArthurSlog](https://github.com/BlessedChild/ArthurSlog/blob/master/ArthurSlog_Logo.png?raw=true)
 
 * ArthurSlog
-* SLog-84
+* SLog-85
 * Year·1
 
 * Guangzhou·China
@@ -24,7 +24,7 @@
 
 * [segmentfault](https://segmentfault.com/u/arthurslog/articles)
 
-信言不美 美言不信 善者不辩 辩者不善 知者不博 博者不知
+道者德之体 德者道之用
 
 ---
 
@@ -52,19 +52,21 @@
 
 * 这次继续使用Axure PR8 来设计产品原型，完成所有基本界面的设计
 
-* 效果展示：[http://www.arthurslog.com/ArthurSlogStore/index.html](http://www.arthurslog.com/ArthurSlogStore/index.html)
+![产品预览图](https://github.com/BlessedChild/ArthurSlog.com/blob/master/client/dist/ArthurSlogStore/000100/productPreview.png?raw=true)
 
-* 这次底部拓展为四个TabBar（主页、购物车、订单、我的），四个基本界面
+* 效果展示：[http://www.arthurslog.com/ArthurSlogStore/000100/index.html](http://www.arthurslog.com/ArthurSlogStore/000100/index.html)
 
-* 同时完成四个基本界面内部的业务设计
+* 这次为页面做了Iphone8 和 Iphone X 的1:2手机原型 
 
-* 图片比较大，网速比较慢，所以加载会很慢，特别是“我的”界面
+* 同时之前的内容也进行调整，完成了这两个机型的适配
 
-* 请每次切换的时候，耐心多等等
+* 服务器性能不高，网速比较慢，所以加载会很慢
+
+* 请每次切换页面的时候，耐心多等等
 
 * 源码已更新至 Github： [https://github.com/BlessedChild/ArthurSlog.com](https://github.com/BlessedChild/ArthurSlog.com)
 
-* 至此，使用Axure RP8 实现了所有基本界面的原型设计。
+* 至此，使用Axure RP8 实现了Iphone8 和 Iphone X 两个机型的原型设计的适配。
 
 ---
 
