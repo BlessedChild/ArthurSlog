@@ -76,9 +76,9 @@
 
 * 下面上一下当前mobile端 ‘个人中心’页面的产品图
 
-![个人中心1](https://github.com/BlessedChild/LogofAxu/blob/master/images/96/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%831.png?raw=true)
+![个人中心1](https://github.com/BlessedChild/LogofAxu/blob/master/images/Slog96/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%831.png?raw=true)
 
-![个人中心2](https://github.com/BlessedChild/LogofAxu/blob/master/images/96/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%832.png?raw=true)
+![个人中心2](https://github.com/BlessedChild/LogofAxu/blob/master/images/Slog96/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%832.png?raw=true)
 
 * 接下来 使用ajax来获取页面信息内容了
 
