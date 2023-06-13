@@ -7,7 +7,7 @@ Slog108｜Year·5
 Guangzhou China
 May 13th 2023
 
-# Optimize the visual effect and loading speed of the interface（优化：界面视觉效果和加载速度）
+# Optimize the visual effect and loading speed of the interface（skill）
 
 **Achievement**
 At the slow network speed, the loading speed of the interface background image can basically show all the low-resolution visual effects to the user within 1s, which increases the transition and improves the user's experience when waiting for the best visual effects to be displayed.

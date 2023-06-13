@@ -7,7 +7,7 @@ Slog108｜Year·5
 Guangzhou China
 May 13th 2023
 
-# Application of SCP instruction（技能：SCP指令的应用、向服务器上传数据）
+# Application of SCP instruction（skill）
 
 远程拷贝文件或文件夹
 在 Mac 上的“终端” App  中，使用 scp 命令在电脑间远程拷贝文件或文件夹。
