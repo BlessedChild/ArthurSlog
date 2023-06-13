@@ -10,7 +10,7 @@ May 13th 2023
 
 # Optimize the visual effect and loading speed of the interface（skill）
 
-**Achievement**
+## Achievement
 At the slow network speed, the loading speed of the interface background image can basically show all the low-resolution visual effects to the user within 1s, which increases the transition and improves the user's experience when waiting for the best visual effects to be displayed.
 
 key point:
@@ -26,7 +26,7 @@ Comparison before and after compression：
 Classified and numbered documents:
 ![20230613002](./asserts/20230613002.png)
 
-**Refrence**
+## Refrence
 https://stackoverflow.com/questions/27191267/what-is-the-best-alternative-to-the-deprecated-lowsrc-for-images
 
 ---
